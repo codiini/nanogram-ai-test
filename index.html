@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hello World</title>
+		<meta name="apple-mobile-web-app-title" content="My App" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<link rel="apple-touch-icon" href="/icon.png" />
+		<script src="https://fwd.dev/js/vue.js"></script>
+		<script src="https://fwd.dev/js/axios.js"></script>
+		<link rel="stylesheet" href="./styles/style.css" />
+	</head>
+
+	<body>
+		<div id="app">
+			<div class="form-left-side">
+				<div class="form-left-side-content">
+					<app-logo></app-logo>
+
+					<h1>Sign Up</h1>
+					<p>Sign up to get started with your free account.</p>
+
+					<app-form
+						@toggle-password-visibility="togglePasswordVisibility"
+						@submit-form="submitForm"
+						@name-input="name = $event"
+						@password-input="password = $event"
+						@email-input="email = $event"
+						:password-type="passwordType"
+						:password="password"
+						:email="email"
+						:name="name"
+					></app-form>
+				</div>
+			</div>
+			<div class="form-right-side"></div>
+		</div>
+
+		<script type="module" src="./app.js"></script>
+	</body>
+</html>
